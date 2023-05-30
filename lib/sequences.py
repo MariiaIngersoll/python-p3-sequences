@@ -1,11 +1,14 @@
-#!/usr/bin/env python3
-
 def print_fibonacci(length):
-  if not length:
-    print([])
-  elif length == 1:
-    print([0])
-  elif length == 2:
-    print([0, 1])
-  elif length == 10:
-    print([0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+    sequence = []
+
+    if length >= 1:
+        sequence.append(0)
+    if length >= 2:
+        sequence.append(1)
+
+    if length > 2:
+        for i in range(2, length):
+            sequence.append(
+                sequence[i - 1] + sequence[i - 2])
+
+    print(sequence)
